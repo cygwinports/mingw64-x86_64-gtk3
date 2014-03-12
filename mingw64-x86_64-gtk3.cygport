@@ -3,7 +3,7 @@ ORIG_PN="gtk+"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gtk3"
-VERSION=3.8.9
+VERSION=3.10.7
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GTK+ GUI toolkit for Win64 toolchain"
@@ -13,13 +13,9 @@ mingw64-x86_64-gcc cross compiler, and installs into the
 /usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
 HOMEPAGE="http://www.gtk.org/"
 
-PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/mingw-gtk3.git/plain/0003-Don-t-use-AC_CANONICAL_TARGET.patch?h=f19
-	http://pkgs.fedoraproject.org/cgit/mingw-gtk3.git/plain/gtk-dont-define-initguid.patch?h=f19
-	3.8.6-enable-static.patch
-"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/mingw-gtk3.git/plain/0004-BURN-THE-.DEF.patch?h=f20"
 
-DIFF_EXCLUDES="gdk.rc gtk.def gtk3.types"
+DIFF_EXCLUDES="gdk.rc gtk.def gtk3.types config.h.win32"
 # PRIVATE entries not supported on mingw64
 # gtkdbusgenerated: tarball was built with glib-2.38
 DISTCLEANFILES="gtk/gtk.def gtk/gtkdbusgenerated.*"
