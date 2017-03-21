@@ -1,0 +1,23 @@
+--- origsrc/gtk+-3.22.9/testsuite/reftests/Makefile.am	2017-01-16 12:59:17.000000000 -0600
++++ src/gtk+-3.22.9/testsuite/reftests/Makefile.am	2017-03-05 11:31:43.573708300 -0600
+@@ -30,19 +30,12 @@ gtk_reftest_LDADD = \
+ 	$(GMODULE_LIBS)			\
+ 	$(NULL)
+ 
+-if PLATFORM_WIN32
+-noinst_LTLIBRARIES =
+-lib_LTLIBRARIES =		\
+-	libgtkreftestprivate.la	\
+-	$(NULL)
+-else
+ noinst_LTLIBRARIES =		\
+ 	libgtkreftestprivate.la	\
+ 	$(NULL)
+-endif
+ 
+ libgtkreftestprivate_la_CFLAGS = $(gtk_reftest_CFLAGS)
+-libgtkreftestprivate_la_LDFLAGS = $(no_undefined)
++libgtkreftestprivate_la_LDFLAGS = $(no_undefined) -rpath `pwd`
+ libgtkreftestprivate_la_LIBADD =	\
+ 	$(top_builddir)/gdk/libgdk-3.la \
+ 	$(top_builddir)/gtk/libgtk-3.la \

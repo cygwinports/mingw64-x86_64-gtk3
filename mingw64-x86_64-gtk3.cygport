@@ -3,7 +3,7 @@ ORIG_PN="gtk+"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gtk3"
-VERSION=3.18.9
+VERSION=3.22.10
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GTK+ GUI toolkit for Win64 toolchain"
@@ -12,6 +12,8 @@ contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
 mingw64-x86_64-gcc cross compiler, and installs into the
 /usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
 HOMEPAGE="http://www.gtk.org/"
+
+PATCH_URI="3.22.9-noinst-tests.patch"
 
 DIFF_EXCLUDES="gdk.rc gtk.def gtk3.types config.h.win32"
 # PRIVATE entries not supported on mingw64
