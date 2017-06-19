@@ -3,7 +3,7 @@ ORIG_PN="gtk+"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-gtk3"
-VERSION=3.22.12
+VERSION=3.22.15
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="GTK+ GUI toolkit for Win64 toolchain"
@@ -30,3 +30,4 @@ CYGCONF_ARGS="
 	--enable-broadway-backend
 	--with-included-immodules
 "
+MAKEOPTS+=" man_MANS= "
